@@ -1,7 +1,7 @@
 import PhoneIco from '../../images/svg/ph_phone-thin.svg';
 import "./Header.scss"
 
-export default function Header() {
+export default function Head() {
 	return (
 		<header className="header">
 			<div className="header__row container">
