@@ -1,0 +1,124 @@
+.prices {
+	&__container {
+	}
+
+	&__title {
+		margin: 0px 0px 5rem 0px;
+	}
+
+	&__body {
+	}
+
+	&__list {
+	}
+	//_________________________________________
+
+	&__item {
+		padding: 0px 0px 15px 0px;
+		margin: 0px 0px 40px 0px;
+		position: relative;
+		border-bottom: 1px solid #454545;
+		&:last-child {
+			margin: 0px 0px 0px 0px;
+		}
+		&.active {
+			.prices__body {
+				background-color: #f4f4f4;
+				padding: 2rem 2.0625rem;
+			}
+			.prices__info {
+				display: block;
+			}
+			.prices__item-name {
+				margin: 0px 0px 3.5rem 0px;
+			}
+			.prices__symbol {
+				&::after {
+					transform: translateX(-50%) rotate(90deg);
+				}
+			}
+		}
+	}
+
+	&__body {
+		padding: 0rem 2.0625rem;
+		transition: all 1s ease 0s;
+		border-radius: 2.5rem;
+	}
+
+	&__item-name {
+		cursor: pointer;
+
+		padding: 0px 0px 15px 0px;
+		display: flex;
+		align-items: center;
+	}
+
+	&__num {
+		font-size: 1.875rem;
+		color: #454545;
+		margin: 0px 1.5625rem 0px 0px;
+	}
+
+	&__label {
+		font-size: 2.25rem;
+		flex: 1 1 auto;
+	}
+	&__symbol {
+		width: 31px;
+		height: 31px;
+		display: block;
+		position: relative;
+		&::before,
+		&::after {
+			content: "";
+			background-color: black;
+
+			position: absolute;
+		}
+		&::before {
+			transform: translate(-50%);
+			top: 50%;
+			width: 100%;
+			height: 2px;
+			left: 0;
+		}
+		&::after {
+			transition: all 0.3s ease 0s;
+			top: 0;
+			height: 100%;
+			width: 2px;
+			left: 0%;
+			transform: translateX(-50%);
+		}
+	}
+
+	&__info {
+		display: none;
+	}
+
+	&__pricelist {
+	}
+
+	.pricelist {
+		padding: 0px 0px 0px 5rem;
+		font-size: 1.5rem;
+		&__work {
+			display: flex;
+			padding: 0px 0px 1.25rem 0px;
+			margin: 0px 0px 2.5rem 0px;
+			border-bottom: 1px dotted #b0b0b0;
+			gap: 0.625rem;
+		}
+
+		&__servicename {
+			flex: 1 1 auto;
+		}
+
+		&__price {
+		}
+
+		&__currency {
+		}
+	}
+}

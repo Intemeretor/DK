@@ -1,0 +1,49 @@
+.header {
+	&__row {
+		padding: 18px 25px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-radius: 60px;
+		background-color: #e7e7e7;
+		margin: 0 auto;
+		display: flex;
+	}
+
+	&__logo {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: #5e5e5e;
+	}
+
+	.navigation {
+		.navigation__list {
+			display: flex;
+			gap: 1.875rem;
+		}
+
+		&__link {
+			color: #0d0d0d;
+			font-size: 1.0625rem;
+
+			&.services {
+				span {
+					margin: 0 10px 0 0;
+				}
+				svg {
+					padding: 0px 0px 0px 0px;
+				}
+			}
+		}
+	}
+
+	.phone-num {
+		display: flex;
+		align-items: center;
+		&__ico {
+		}
+
+		&__number {
+		}
+	}
+}
