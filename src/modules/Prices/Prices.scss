@@ -25,9 +25,12 @@
 			.prices__body {
 				background-color: #f4f4f4;
 				padding: 2rem 2.0625rem;
+				max-height: none;
 			}
 			.prices__info {
+				visibility: visible;
 				display: block;
+				transition: all 1s ease 0s;
 			}
 			.prices__item-name {
 				margin: 0px 0px 3.5rem 0px;
@@ -41,6 +44,7 @@
 	}
 
 	&__body {
+		max-height: 3.75rem;
 		transition: all 1s ease 0s;
 		padding: 0rem 2.0625rem;
 		border-radius: 2.5rem;
@@ -95,9 +99,9 @@
 	}
 
 	&__info {
-		display: none;
+		visibility: hidden;
+		transition: all 0s ease 0s;
 		position: relative;
-		transform-origin: top;
 	}
 
 	&__pricelist {
