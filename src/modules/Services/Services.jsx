@@ -13,7 +13,7 @@ export default function Services() {
 			<div className="services__container container">
 				<div className="services__head">
 					<h2 className="services__title title">Services</h2>
-					<div className="services__text">At the consultation, the doctor will definitely recommend the right service for your case</div>
+					<div className="services__text toptext">At the consultation, the doctor will definitely recommend the right service for your case</div>
 				</div>
 				<div className="services__body">
 					<div className="services__grid">

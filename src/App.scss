@@ -11,3 +11,23 @@ body {
 	overflow: hidden;
 	padding: 20px 20px 0 20px;
 }
+.toptext {
+	font-size: 1.875rem;
+}
+.title {
+	font-size: 3.125rem;
+}
+
+.place {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	.bigboy {
+		position: relative;
+		background-color: red;
+		opacity: 1;
+		width: 300px;
+		height: 300px;
+		z-index: 2;
+	}
+}

@@ -1,0 +1,62 @@
+.team {
+	&__container {
+	}
+
+	&__head {
+		margin: 0px 0px 5rem 0px;
+		display: flex;
+		align-items: center;
+	}
+
+	&__title {
+		flex: 0 0 33.333%;
+		color: #000;
+	}
+
+	&__text {
+	}
+
+	&__carousel {
+	}
+
+	&__cards {
+		display: flex;
+		gap: 1.25rem;
+		justify-content: space-between;
+	}
+
+	&__card {
+		flex: 0 1 33.333%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__photo {
+		min-width: 12.1875rem;
+		border-radius: 1.875rem;
+		overflow: hidden;
+		margin: 0px 0px 1.5rem 0px;
+		padding: 0px 0px 120.7% 0px;
+		position: relative;
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+
+	&__name {
+		margin: 0px 0px 0.9375rem 0px;
+		font-size: 2rem;
+		font-weight: 500;
+	}
+
+	&__profession {
+		font-size: 1.5rem;
+		color: #3b3b3b;
+		font-weight: 500;
+	}
+}
