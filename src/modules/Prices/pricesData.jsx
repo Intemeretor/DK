@@ -1,5 +1,7 @@
 export default [
 	{
+		id: 0,
+		active: false,
 		num: '[01]',
 		title: 'Diagnosis',
 		works: [
@@ -26,6 +28,8 @@ export default [
 		]
 	},
 	{
+		id: 1,
+		active: false,
 		num: '[02]',
 		title: 'Surgery',
 		works: [
@@ -37,6 +41,8 @@ export default [
 		]
 	},
 	{
+		id: 2,
+		active: false,
 		num: '[03]',
 		title: 'Orthodontics',
 		works: [
@@ -48,6 +54,8 @@ export default [
 		]
 	},
 	{
+		id: 3,
+		active: false,
 		num: '[04]',
 		title: 'Implantation of teeth',
 		works: [
@@ -59,6 +67,8 @@ export default [
 		]
 	},
 	{
+		id: 4,
+		active: false,
 		num: '[05]',
 		title: 'Prosthesis',
 		works: [

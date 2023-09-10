@@ -1,13 +1,9 @@
 import { useState } from "react"
 
-export default function PricesItem(props) {
-	const [activePrice, setActivePrice] = useState(false);
+export default function PricesItem({ updateItems, active, num, title, works, id } = props) {
 
-	function changeActive() {
-		setActivePrice(prev => !prev);
-	}
 
-	let works = props.works.map((item, index) => {
+	let worksList = works.map((item, index) => {
 		return (
 			<li key={index} className="pricelist__work">
 				<span className="pricelist__servicename">{item.name}</span>
@@ -16,17 +12,18 @@ export default function PricesItem(props) {
 			</li>
 		)
 	})
+
 	return (
-		<li className={`prices__item ${activePrice ? 'active' : ''}`}  >
+		<li className={`prices__item ${active ? 'active' : ''}`}  >
 			<div className="prices__body">
-				<div className="prices__item-name" onClick={changeActive}>
-					<span className="prices__num">{props.num}</span>
-					<span className="prices__label">{props.title}</span>
+				<div className="prices__item-name" onClick={() => updateItems(id)}>
+					<span className="prices__num">{num}</span>
+					<span className="prices__label">{title}</span>
 					<span className="prices__symbol"></span>
 				</div>
 				<div className="prices__info">
 					<ul className="prices__pricelist pricelist">
-						{works}
+						{worksList}
 					</ul>
 				</div>
 			</div>

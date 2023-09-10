@@ -15,7 +15,7 @@
 
 	&__item {
 		padding: 0px 0px 15px 0px;
-		margin: 0px 0px 40px 0px;
+		margin: 0px 0px 25px 0px;
 		position: relative;
 		border-bottom: 1px solid #454545;
 		&:last-child {
@@ -41,14 +41,15 @@
 	}
 
 	&__body {
-		padding: 0rem 2.0625rem;
 		transition: all 1s ease 0s;
+		padding: 0rem 2.0625rem;
 		border-radius: 2.5rem;
 	}
 
 	&__item-name {
+		position: relative;
 		cursor: pointer;
-
+		z-index: 20;
 		padding: 0px 0px 15px 0px;
 		display: flex;
 		align-items: center;
@@ -95,6 +96,8 @@
 
 	&__info {
 		display: none;
+		position: relative;
+		transform-origin: top;
 	}
 
 	&__pricelist {
