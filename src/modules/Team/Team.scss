@@ -20,22 +20,24 @@
 	}
 
 	&__cards {
-		padding: 10px;
+		flex-wrap: nowrap;
+		padding: 0 0px 0 0;
 		display: flex;
-		margin: 0 -10px;
-		justify-content: space-between;
-		overflow: hidden;
+		// margin: 0 -10px;
+		justify-content: flex-start;
+		gap: 20px;
 	}
 
 	&__card {
-		margin: 0 10px;
+		// margin: 0 10px;
 		flex: 0 1 33.333%;
 		display: flex;
 		flex-direction: column;
-		@media screen and (max-width: 1200px) {
+
+		@media screen and (max-width: 900px) {
 			flex: 0 0 50%;
 		}
-		@media screen and (max-width: 900px) {
+		@media screen and (max-width: 550px) {
 			flex: 0 0 100%;
 		}
 	}
@@ -43,11 +45,12 @@
 	&__photo {
 		min-width: 12.1875rem;
 		border-radius: 1.875rem;
-		overflow: hidden;
 		margin: 0px 0px 1.5rem 0px;
 		padding: 0px 0px 120.7% 0px;
 		position: relative;
 		img {
+			border-radius: 1.875rem;
+
 			height: 100%;
 			width: 100%;
 			object-fit: cover;
@@ -58,6 +61,7 @@
 	}
 
 	&__name {
+		flex: 1 1 auto;
 		margin: 0px 0px 0.9375rem 0px;
 		font-size: 2rem;
 		font-weight: 500;
