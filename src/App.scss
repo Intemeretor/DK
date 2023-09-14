@@ -5,10 +5,11 @@ body {
 .container {
 	max-width: 1300px;
 	margin: 0 auto;
+	overflow: hidden;
 }
 .wrapper {
 	min-height: 100%;
-	overflow: hidden;
+
 	padding: 20px 20px 0 20px;
 }
 .toptext {

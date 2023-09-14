@@ -13,6 +13,8 @@ function App() {
 	function run() {
 		setAct(prev => !prev);
 	}
+
+
 	return (
 
 		<main className="wrapper">

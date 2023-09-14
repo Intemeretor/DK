@@ -20,22 +20,22 @@
 	}
 
 	&__cards {
+		overflow: hidden;
 		flex-wrap: nowrap;
-		padding: 0 0px 0 0;
 		display: flex;
 		// margin: 0 -10px;
 		justify-content: flex-start;
+
 		gap: 20px;
 	}
 
 	&__card {
 		// margin: 0 10px;
-		flex: 0 1 33.333%;
+		flex: 0 0 calc((100% / 3) - 15px);
 		display: flex;
 		flex-direction: column;
-
 		@media screen and (max-width: 900px) {
-			flex: 0 0 50%;
+			flex: 0 0 calc((100% / 2) - 12px);
 		}
 		@media screen and (max-width: 550px) {
 			flex: 0 0 100%;
