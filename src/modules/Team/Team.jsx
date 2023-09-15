@@ -17,7 +17,7 @@ export default function Team() {
 	});
 	const [arrowsActive, setArrowsActive] = useState({
 		lArrow: options.active > 0,
-		rArrow: options.active < options.indicatorQuantity
+		rArrow: options.active < options.indicatorQuantity - 1
 	})
 
 
@@ -44,7 +44,12 @@ export default function Team() {
 			window.removeEventListener('resize', updateDimension);
 		})
 	}, [screenSize]);
-
+	useEffect(() => {
+		setArrowsActive(prev => ({
+			lArrow: options.active > 0,
+			rArrow: options.active < options.indicatorQuantity - 1
+		}))
+	}, [options.active])
 	const cards = cardData.map((item, index) => {
 		return (
 			<TeamCard
@@ -77,18 +82,10 @@ export default function Team() {
 		if (options.active > 0) {
 			setOptions(prev => ({ ...prev, active: prev.active - 1 }));
 		}
-		if (options.active == 0) {
-			setArrowsActive(prev => ({ ...prev, lArrow: false }))//DOESN't WORK
-		} else {
-			setArrowsActive(prev => ({ ...prev, lArrow: true }))//DOESN't WORK
-		}
 	}
 	function nextSlide() {
 		if (options.active < options.indicatorQuantity - 1) {
 			setOptions(prev => ({ ...prev, active: prev.active + 1 }));
-
-		} else {
-			setArrowsActive(prev => ({ ...prev, rArrow: !prev.rArrow }))//DOESN't WORK
 		}
 
 	}
