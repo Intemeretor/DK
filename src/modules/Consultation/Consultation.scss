@@ -1,0 +1,141 @@
+.consultation {
+	&__container {
+	}
+
+	&__row {
+		display: flex;
+		gap: 1.375rem;
+	}
+
+	&__column {
+		&:first-child {
+			flex: 0 0 36%;
+		}
+		&:last-child {
+			flex: 0 1 auto;
+		}
+	}
+	&__img {
+		height: 100%;
+		border-radius: 30px;
+		overflow: hidden;
+		position: relative;
+
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+	&__title {
+		font-size: 2.25rem;
+		margin: 0px 0px 10px 0px;
+	}
+
+	&__form {
+	}
+}
+.container {
+	&__body {
+	}
+}
+
+.user {
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+	}
+	&__first-row {
+		div {
+			flex: 0 1 50%;
+		}
+		margin: 0px 0px 20px 0px;
+	}
+
+	&__item {
+		border-radius: 18px;
+		background-color: #f9faf9;
+		position: relative;
+		span {
+			position: absolute;
+			left: 30px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		input {
+			width: 100%;
+			padding: 30px 20px 30px 70px;
+			font-size: 1.25rem;
+			background-color: transparent;
+		}
+	}
+	&__item-text {
+		border-radius: 30px;
+		padding: 30px;
+		min-height: 12.875rem;
+		width: 100%;
+		background-color: #f9faf9;
+		font-size: 1.25rem;
+		resize: none;
+		margin: 0px 0px 40px 0px;
+	}
+
+	&__second-row {
+		margin: 0px 0px 20px 0px;
+		div {
+			&:first-child {
+				flex: 0 1 66.6666%;
+			}
+		}
+	}
+
+	&__third-row {
+		display: flex;
+		justify-content: space-between;
+		align-items: start;
+	}
+
+	&__checkbox {
+		max-width: 345px;
+		input {
+			display: none;
+		}
+		display: flex;
+		gap: 20px;
+	}
+
+	&__custom-check {
+		width: 46px;
+		height: 46px;
+		border-radius: 11px;
+		flex: 0 0 auto;
+		border: 1px solid #000;
+		position: relative;
+		&.active {
+			&::before {
+				content: url("./check.svg");
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				position: absolute;
+			}
+		}
+	}
+	&__label {
+		padding: 0px 0px 0px 1.25rem;
+		font-size: 1.25rem;
+	}
+
+	&__submit {
+		padding: 1.875rem 10.625rem;
+		background-color: #2581c4;
+		border-radius: 183px;
+		span {
+			white-space: nowrap;
+			color: white;
+			font-weight: 500;
+			font-size: 1.5rem;
+		}
+	}
+}
