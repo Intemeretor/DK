@@ -1,0 +1,105 @@
+.reviews {
+	&__container {
+	}
+
+	&__title {
+		margin: 0px 0px 5.625rem 0px;
+	}
+
+	&__row {
+		margin: 0px 0px 3.125rem 0px;
+	}
+
+	&__cards {
+		display: flex;
+		gap: 1.25rem;
+		transition: all 1s ease 0s;
+	}
+
+	.review {
+		padding: 30px 40px 40px 40px;
+		border-radius: 30px;
+		background-color: #e8effd;
+		position: relative;
+		z-index: 20;
+		&__photo {
+			right: 0;
+			top: 0;
+			display: block;
+			position: absolute;
+			z-index: 50;
+			border-radius: 0 0 0 30px;
+			border-left: 20px solid #ffffff;
+			border-bottom: 20px solid #ffffff;
+			border-right: 20px solid #ffffff;
+			background-color: white;
+
+			img {
+				border-radius: 22px;
+			}
+			&::before {
+				content: "";
+				top: 0;
+				left: -50px;
+				border-radius: 0 30px 0 0;
+				box-shadow: 7px -6px 0px 3px white;
+				position: absolute;
+				z-index: 50;
+				width: 30px;
+				height: 30px;
+				background-color: #e8effd;
+			}
+			&::after {
+				content: "";
+				bottom: -50px;
+				right: -20px;
+				border-radius: 0 30px 0 0;
+				box-shadow: 7px -6px 0px 3px white;
+				position: absolute;
+				z-index: 50;
+				width: 30px;
+				height: 30px;
+				background-color: #e8effd;
+			}
+		}
+		&__body {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__name {
+			margin: 0px 0px 0.8125rem 0px;
+			font-size: 1.5rem;
+			font-weight: 500;
+		}
+
+		&__stars-row {
+			margin: 0px 0px 2.1875rem 0px;
+			display: flex;
+		}
+
+		&__text {
+			line-height: 130%;
+			font-size: 18px;
+			font-weight: 500;
+		}
+	}
+	&__arrows {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+	}
+	&__arrow {
+		&.unactive {
+			cursor: default;
+			svg {
+				fill: #8c8c8c;
+				stroke: #b0b0b0;
+			}
+		}
+		cursor: pointer;
+	}
+	&__arrow-left {
+	}
+}

@@ -1,10 +1,14 @@
-import './Team.scss';
-import TeamCard from './TeamCard';
-import TeamData from './TeamData';
-import { useState, useEffect } from 'react';
+import ReviewsData from "./ReviewsData";
+import './Reviews.scss';
+import ReviewsCard from "./ReviewsCard";
+import { v4 as uuidv4 } from 'uuid';
 
-export default function Team() {
-	const [cardData, setCardData] = useState(TeamData);
+
+import { useState, useEffect } from "react";
+
+export default function Reviews() {
+	const [cardData, setCardData] = useState(ReviewsData);
+	//_______________________________________________
 	const sliderSize = cardData.length;
 	const [screenSize, setScreenSize] = useState({
 		width: window.innerWidth,
@@ -12,7 +16,7 @@ export default function Team() {
 	})
 	const [options, setOptions] = useState({
 		active: 0,
-		slidesToShow: screenSize.width > 1050 ? 3 : (screenSize.width <= 1050 && screenSize.width > 550 ? 2 : 1),
+		slidesToShow: screenSize.width > 1050 ? 3 : (screenSize.width <= 1050 && screenSize.width > 725 ? 2 : 1),
 		indicatorQuantity: sliderSize - 2,
 	});
 	const [arrowsActive, setArrowsActive] = useState({
@@ -29,7 +33,7 @@ export default function Team() {
 				width: window.innerWidth,
 				height: window.innerHeight
 			}));
-			setOptions(prev => ({ ...prev, slidesToShow: screenSize.width > 1050 ? 3 : (screenSize.width <= 1050 && screenSize.width > 550 ? 2 : 1) }))
+			setOptions(prev => ({ ...prev, slidesToShow: screenSize.width > 1050 ? 3 : (screenSize.width <= 1050 && screenSize.width > 725 ? 2 : 1) }))
 		}
 		setOptions(prev => ({ ...prev, active: 0, indicatorQuantity: sliderSize - options.slidesToShow + 1 }));
 		window.addEventListener('resize', updateDimension);
@@ -44,20 +48,6 @@ export default function Team() {
 			rArrow: options.active < options.indicatorQuantity - 1
 		}))
 	}, [options.active])
-	const cards = cardData.map((item, index) => {
-		return (
-			<TeamCard
-				photo={item.img}
-				id={index}
-				name={item.name}
-				profession={item.profession}
-				key={index}
-				screenSize={screenSize}
-				options={options}
-			/>
-		)
-	})
-
 
 	const indicators = [];
 	for (let i = 0; i < options.indicatorQuantity; i++) {
@@ -69,6 +59,7 @@ export default function Team() {
 	}
 	function changeSlide(id) {
 		setOptions(prev => ({ ...prev, active: id }));
+
 	}
 	function prevSlide() {
 
@@ -84,32 +75,43 @@ export default function Team() {
 	}
 
 
+	//_______________________________________________
+
+	const cards = cardData.map((item, index) => (
+		<ReviewsCard
+			id={index}
+			key={index}
+			photo={item.photo}
+			text={item.text}
+			name={item.name}
+			score={item.score}
+			options={options}
+		/>
+	))
 	return (
-		<section className="team">
-			<div className="team__container container">
-				<div className="team__head">
-					<h2 className='team__title title'>Team</h2>
-					<div className="team__text toptext">Each doctor provides a consultation separately for your case</div>
-				</div>
-				<div className="team__carousel ">
-					<ul className="team__cards" style={{
+		<section className="reviews">
+			<div className="reviews__container container">
+				<h2 className="reviews__title title">Reviews</h2>
+				<div className="reviews__row">
+					<ul className="reviews__cards" style={{
 						transform: `translateX(-${((100 / options.slidesToShow) * options.active)}%`
 					}}>
 						{cards}
 					</ul>
 				</div>
-				<div className="team__indicators indicators">
+
+				<div className="reviews__indicators indicators">
 					{indicators}
 				</div>
-				<div className="team__arrows">
-					<span onClick={prevSlide} className={`team__arrow-left team__arrow ${!arrowsActive.lArrow && 'unactive'}`}>
+				<div className="reviews__arrows">
+					<span onClick={prevSlide} className={`reviews__arrow-left reviews__arrow ${!arrowsActive.lArrow && 'unactive'}`}>
 						<svg width="101" height="101" viewBox="0 0 101 101" fill='#292929' xmlns="http://www.w3.org/2000/svg" stroke="black">
 							<circle cx="50.2958" cy="50.6557" r="36" transform="rotate(-122 50.2958 50.6557)" fill="transparent" />
 							<path d="M37.819 49.3996C37.4312 49.7928 37.4355 50.426 37.8287 50.8138L44.2361 57.134C44.6293 57.5219 45.2625 57.5175 45.6503 57.1244C46.0381 56.7312 46.0338 56.098 45.6406 55.7102L39.9451 50.0922L45.5631 44.3967C45.951 44.0035 45.9466 43.3704 45.5534 42.9825C45.1602 42.5947 44.5271 42.599 44.1392 42.9922L37.819 49.3996ZM61.2643 48.9461L38.5241 49.1019L38.5378 51.1019L61.278 50.9461L61.2643 48.9461Z" />
 						</svg>
 
 					</span>
-					<span onClick={nextSlide} className={`team__arrow-right team__arrow ${!arrowsActive.rArrow && 'unactive'}`}>
+					<span onClick={nextSlide} className={`reviews__arrow-right reviews__arrow ${!arrowsActive.rArrow && 'unactive'}`}>
 						<svg width="102" height="101" viewBox="0 0 102 101" fill="#292929" xmlns="http://www.w3.org/2000/svg" stroke="black">
 							<circle cx="50.9376" cy="50.2958" r="36" transform="rotate(58 50.9376 50.2958)" fill="transparent" />
 							<path d="M63.4144 51.5519C63.8022 51.1587 63.7979 50.5256 63.4047 50.1377L56.9973 43.8175C56.6041 43.4297 55.9709 43.434 55.5831 43.8272C55.1952 44.2204 55.1996 44.8535 55.5928 45.2414L61.2882 50.8593L55.6703 56.5548C55.2824 56.948 55.2868 57.5812 55.68 57.969C56.0732 58.3568 56.7063 58.3525 57.0941 57.9593L63.4144 51.5519ZM39.9691 52.0054L62.7093 51.8496L62.6956 49.8497L39.9554 50.0055L39.9691 52.0054Z" />
@@ -118,7 +120,6 @@ export default function Team() {
 					</span>
 				</div>
 			</div>
-
 		</section>
 	)
 }

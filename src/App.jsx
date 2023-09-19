@@ -5,6 +5,7 @@ import About from './modules/About/About';
 import Services from './modules/Services/Services';
 import Prices from './modules/Prices/Prices';
 import Team from './modules/Team/Team';
+import Reviews from './modules/Reviews/Reviews';
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
 			<Services />
 			<Prices />
 			<Team />
-
+			<Reviews />
 		</main>
 	)
 }

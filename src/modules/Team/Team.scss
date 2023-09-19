@@ -1,4 +1,5 @@
 .team {
+	margin: 0px 0px 11.25rem 0px;
 	&__container {
 	}
 
@@ -79,29 +80,7 @@
 		color: #3b3b3b;
 		font-weight: 500;
 	}
-	.indicators {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin: 0px 0px 2.5rem 0px;
-		gap: 10px;
-		&__button {
-			position: relative;
-			background-color: #d9d9d9;
-			width: 10px;
-			height: 10px;
-			border-radius: 50%;
-			&.active {
-				background-color: #4c4c4c;
-			}
-		}
 
-		&__symbol {
-			height: 100%;
-			width: 100%;
-			position: absolute;
-		}
-	}
 	//___________________
 
 	&__arrows {
@@ -121,5 +100,28 @@
 		cursor: pointer;
 	}
 	&__arrow-left {
+	}
+}
+.indicators {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0px 0px 2.5rem 0px;
+	gap: 10px;
+	&__button {
+		position: relative;
+		background-color: #d9d9d9;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		&.active {
+			background-color: #4c4c4c;
+		}
+	}
+
+	&__symbol {
+		height: 100%;
+		width: 100%;
+		position: absolute;
 	}
 }
