@@ -7,16 +7,10 @@ import Prices from './modules/Prices/Prices';
 import Team from './modules/Team/Team';
 import Reviews from './modules/Reviews/Reviews';
 import Consultation from './modules/Consultation/Consultation';
+import Footer from './modules/Footer/Footer';
 
 
 function App() {
-
-	const [act, setAct] = useState(false);
-	function run() {
-		setAct(prev => !prev);
-	}
-
-
 	return (
 
 		<main className="wrapper">
@@ -27,6 +21,7 @@ function App() {
 			<Team />
 			<Reviews />
 			<Consultation />
+			<Footer />
 		</main>
 	)
 }
