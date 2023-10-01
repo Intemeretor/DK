@@ -29,7 +29,7 @@ export default function Consultation() {
 						</div>
 					</div>
 					<div className="consultation__column">
-						<div className="container__body">
+						<div className="consultation__body">
 							<h3 className="consultation__title">
 								You can book an appointment for a consultation
 							</h3>

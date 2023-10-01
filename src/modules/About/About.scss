@@ -15,7 +15,6 @@
 
 		&__title {
 			font-size: 2.875rem;
-			text-shadow: 0 2px 5px #000;
 			font-weight: 500;
 			margin: 0px 0px 20px 0px;
 			line-height: 126%;
@@ -34,6 +33,7 @@
 			display: flex;
 			justify-content: flex-start;
 			gap: 1.25rem;
+			margin: 0px 0px 125px 0px;
 		}
 
 		&__button {
